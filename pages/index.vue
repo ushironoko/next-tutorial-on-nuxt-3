@@ -2,16 +2,25 @@
 definePageMeta({
   layout: "home",
 });
+
+const { data: posts } = useFetch("/api/posts/sortedpostsData");
 </script>
 
 <template>
-  <section class="headingMd">
-    <p>こんにちは！</p>
-    <p>
-      (This is a sample website - you’ll be building a site like this on
-      <a href="https://nuxt.com">Nuxt3</a>.)
-    </p>
-  </section>
+  <div class="flex justify-center">
+    <main>
+      <section>
+        <div v-for="post in posts" :key="post.id">
+          <p>{{ post.publishedAt }}</p>
+          <NuxtLink :href="`/posts/${post.id}`">
+            <h2 class="headingLg">
+              <p>{{ post.title }}</p>
+            </h2>
+          </NuxtLink>
+        </div>
+      </section>
+    </main>
+  </div>
 </template>
 
 <style lang="scss" scoped>
