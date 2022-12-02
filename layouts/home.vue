@@ -22,24 +22,17 @@ const siteTitle = "Learn how to build a personal website using Nuxt3";
       <Meta name="twitter:card" content="summary_large_image" />
     </Head>
     <header class="header">
-      <NuxtLink href="/">
-        <img
-          priority
-          src="/images/profile.jpeg"
-          class="borderCircle"
-          height="144"
-          width="144"
-          alt=""
-        />
-      </NuxtLink>
-      <h2 class="heading2Xl">
-        <NuxtLink class="colorInherit" href="/">{{ name }}</NuxtLink>
-      </h2>
+      <img
+        priority
+        src="/images/profile.jpeg"
+        class="borderCircle"
+        height="144"
+        width="144"
+        alt=""
+      />
+      <h1 class="heading2Xl">{{ name }}</h1>
     </header>
     <main><slot /></main>
-    <div class="backToHome">
-      <NuxtLink href="/">← Back to home</NuxtLink>
-    </div>
   </div>
 </template>
 
@@ -55,8 +48,5 @@ const siteTitle = "Learn how to build a personal website using Nuxt3";
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.backToHome {
-  margin: 3rem 0 0;
 }
 </style>
